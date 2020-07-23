@@ -1,8 +1,5 @@
 import { CommonModule }             from '@angular/common';
 import { NgModule }                 from '@angular/core';
-import { MatButtonModule }          from '@angular/material/button';
-import { MatFormFieldModule}        from '@angular/material/form-field';
-import { MatInputModule }           from '@angular/material/input';
 import { BrowserModule }            from '@angular/platform-browser';
 import { AngularFireModule }        from '@angular/fire';
 import { AngularFirestoreModule }   from '@angular/fire/firestore';
@@ -10,7 +7,7 @@ import { AngularFirestore }         from '@angular/fire/firestore';
 import { CellComponent }            from './cell/cell.component';
 import { BoardComponent }           from './board/board.component';
 import { GameService }              from './game.service';
-
+import { MaterialModule }           from './material.module';
 import * as Hammer                  from 'hammerjs';
 import { HammerModule,HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
@@ -36,9 +33,8 @@ const firebaseConfig = {
                   AngularFirestoreModule,
                   BrowserModule,
                   HammerModule,
-                  MatButtonModule,
-                  MatFormFieldModule,
-                  MatInputModule
+                  MaterialModule,
+
                 ],
   declarations: [CellComponent, BoardComponent],
   exports:      [CellComponent, BoardComponent],
