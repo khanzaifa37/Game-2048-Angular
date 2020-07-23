@@ -12,28 +12,30 @@
   </div>
 
 </div>
-
-    <div id="board" [style.width.px]="gridSize*90" (swipe)="onSwipe($event)" >
-      <div id="game-over" *ngIf="gameOver">
-        <div id="game-over-body">
-          <mat-card>
-            <h4>Game Over</h4>
-            <button (click)="restart()" mat-raised-button color="warn">Restart</button>
-          </mat-card>
-        </div>
-      </div>
-      <app-cell *ngFor="let cell of cells" [cell]="cell" (success)="successHandler($event)"></app-cell>
-    </div>
-
-    <hr/>
-    <div id="leaderboard" >
-      <div class="mat-title">
-        Top 10 <span><mat-icon  color="accent">stars</mat-icon></span>
-      </div>
-      <div id="leaderboard-value" *ngFor="let leader of scores | async">
-        <li>{{leader.name}} - {{leader.score}}</li>
+<div class="container">
+  <div id="board" [style.width.px]="gridSize*90" (swipe)="onSwipe($event)" >
+    <div id="game-over" *ngIf="gameOver">
+      <div id="game-over-body">
+        <mat-card>
+          <h4>Game Over</h4>
+          <button (click)="restart()" mat-raised-button color="warn">Restart</button>
+        </mat-card>
       </div>
     </div>
+    <app-cell *ngFor="let cell of cells" [cell]="cell" (success)="successHandler($event)"></app-cell>
+  </div>
+
+  <div id="leaderboard" >
+    <div class="mat-title">
+      Top 10 <span><mat-icon  color="accent">stars</mat-icon></span>
+    </div>
+
+    <div id="leaderboard-value" *ngFor="let leader of scores | async">
+      <li><span id="name">{{leader.name}}</span>  <span id="score"> :&emsp; &emsp;&emsp;{{leader.score}}</span></li>
+    </div>
+  </div>
+</div>
+
   <!-- </div>
 </div> -->
 

@@ -1,13 +1,27 @@
+.container {
+  display: flex; /* or inline-flex */
+  margin:auto;
+  justify-content: center;
+}
 #board {
   /*width: 348px;*/
   position: relative;
   padding: 5px;
-  background: #bbada0;
+  background: #2E2526;
   border-radius: 5px;
-  margin: auto;
+  margin: 0 50px;
   cursor:grabbing;
-}
 
+}
+#name{
+font-size:16px;
+font-weight:300px;
+}
+#score
+{
+  font-size:16px;
+  font-weight:300px;
+}
 mat-form-field{
   margin:10px;
 }
@@ -17,7 +31,7 @@ mat-form-field{
 }
 
 h3 {
-  color: #bbada0;
+  color: #554b42;
   text-align: center;
   font-family: sans-serif;
 }
@@ -75,5 +89,7 @@ div#game-over-body {
 } */
 
 #leaderboard{
-  text-align: center;
+
+  padding:20px;
+  line-height: 2rem;
 }
