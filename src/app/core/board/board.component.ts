@@ -1,14 +1,14 @@
 import { Component, ViewChildren, QueryList, HostListener, Input }  from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection }             from '@angular/fire/firestore';
-import { Subscription }                                             from 'rxjs';
-import { Observable }                                               from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Subscription } from 'rxjs';
+import {Observable} from 'rxjs';
 import { DocumentSnapshot } from '@firebase/firestore-types';
 import { CellComponent }                                            from '../cell/cell.component';
 import { KEY_MAP }                                                  from '../constants/key-map';
 import { ACTION_MAP, IOperationResult }                             from '../action-handler';
 import { GameService }                                              from '../game.service';
 import { Cell }                                                     from '../cell.model';
-import * as Hammer                                                  from 'hammerjs';
+import * as Hammer from 'hammerjs';
 export interface score { name: string,score:number }
 
 @Component({
