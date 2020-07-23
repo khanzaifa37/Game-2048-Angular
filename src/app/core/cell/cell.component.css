@@ -1,7 +1,7 @@
 #cell {
   width: 80px;
   height: 80px;
-  background-color: rgb(205, 193, 180);
+  background-color:#29282881;
   display: inline-block;
   vertical-align: middle;
   margin: 5px;
@@ -10,7 +10,7 @@
   font-size: 50px;
   font-weight: bold;
   font-family: sans-serif;
-  color: #776e65;
+  color: #fff;
 }
 
 div#cell-value {
@@ -27,31 +27,31 @@ div#cell-value {
 }
 
 #cell.color-2 {
-    background: #eee4da;
+    background: #cfc036;
 }
 
 #cell.color-4 {
-    background: #ede0c8;
+    background: #d1e04bb0;
 }
 
 #cell.color-8 {
   color: #f9f6f2;
-  background: #f2b179;
+  background: #ee954c;
 }
 
 #cell.color-16 {
   color: #f9f6f2;
-  background: #f59563;
+  background: #E76F51;
 }
 
 #cell.color-32 {
   color: #f9f6f2;
-  background: #f67c5f;
+  background: #ec5e3a;
 }
 
 #cell.color-64 {
   color: #f9f6f2;
-  background: #f65e3b;
+  background: #a02e15;
 }
 
 #cell.color-128 {
@@ -61,22 +61,22 @@ div#cell-value {
 
 #cell.color-256 {
   color: #f9f6f2;
-  background: #edcc61;
+  background: #4c6f7c;
 }
 
 #cell.color-512 {
   color: #f9f6f2;
-  background: #edc850;
+  background: #264653;
 }
 
 #cell.color-1024 {
   color: #f9f6f2;
-  background: #edc53f;
+  background: #5f9c95;
 }
 
 #cell.color-2048 {
   color: #f9f6f2;
-  background: #edc22e;
+  background: #2A9D8F;
 }
 
 #cell.color-super {

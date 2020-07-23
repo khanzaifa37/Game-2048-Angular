@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as Hammer from 'hammerjs';
+
 @Component({
   selector:     'app-root',
   templateUrl:  './app.component.html',
@@ -7,5 +8,7 @@ import * as Hammer from 'hammerjs';
 })
 export class AppComponent {
   title = '2048';
+
+
 
 }

@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserModule }  from '@angular/platform-browser';
 import { NgModule }       from '@angular/core';
 import { FormsModule }    from '@angular/forms';
@@ -30,7 +31,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     HammerModule,
     BrowserAnimationsModule,
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    MatProgressSpinnerModule
   ],
   providers: [{
     provide: HAMMER_GESTURE_CONFIG,
