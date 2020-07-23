@@ -46,15 +46,18 @@ div#game-over-body {
   text-align: center;
   width: 100%;
 }
+#game-over-body mat-card{
+  background-color:#2E2526;
+}
 
-#game-over-body button {
+/* #game-over-body button {
   font-size: 30px;
   border: 0px;
   background-color: white;
   border-radius: 7px;
   padding: 15px;
   cursor: pointer;
-}
+} */
 
 #bar {
   text-align: center;
