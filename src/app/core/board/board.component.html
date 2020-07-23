@@ -1,0 +1,38 @@
+<div id="bar">
+  <h3>Score: {{score}}</h3>
+  <!-- <input type="number" #newSize placeholder="New Size" >
+  <button (click)="restart(newSize.value || gridSize); newSize.value = ''">New Game</button> -->
+  <div>
+    <mat-form-field appearance="outline" id="form-field">
+      <mat-label>Player Name</mat-label>
+      <input matInput type="text" id="playerInput" #playerName placeholder="Enter player name">
+    </mat-form-field>
+    <!-- <input type="text" id="playerInput" #playerName placeholder="Enter player name"> -->
+    <button mat-raised-button color="primary" (click)="setPlayerName(playerName.value || playerName); playerName.value = 'Player1'">Set Name</button>
+  </div>
+
+</div>
+
+    <div id="board" [style.width.px]="gridSize*90" (swipe)="onSwipe($event)" >
+      <div id="game-over" *ngIf="gameOver">
+        <div id="game-over-body">
+          <h4>Game Over</h4>
+          <button (click)="restart()">Restart</button>
+        </div>
+      </div>
+      <app-cell *ngFor="let cell of cells" [cell]="cell" (success)="successHandler($event)"></app-cell>
+    </div>
+
+    <hr/>
+    <div id="leaderboard" >
+      This is the leaderboard
+      <div id="leaderboard-value" *ngFor="let leader of scores | async">
+        <li>{{leader.name}} - {{leader.score}}</li>
+      </div>
+    </div>
+  <!-- </div>
+</div> -->
+
+
+
+
