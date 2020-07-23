@@ -1,4 +1,4 @@
-.container {
+#container {
   display: flex; /* or inline-flex */
   margin:auto;
   justify-content: center;
@@ -87,6 +87,14 @@ div#game-over-body {
   border: 0;
   padding: 8px 13px 10px;
 } */
+@media screen and (max-width: 575px) {
+  #container {
+    display: block;
+  }
+  #board{
+    width: 348px;
+  }
+}
 
 #leaderboard{
 
