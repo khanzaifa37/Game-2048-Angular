@@ -3,6 +3,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 A version of the game 2048 , with added features of mouse swiping and leaderboard. Play and see your skills at the same.
 
 Hosted Version:    https://game-2048-angular.herokuapp.com/  
+1. To change name, click Set Name.
+2. To save score, make sure to click restart.
+
 You can also start locally using ng serve, however firebase configuration must be provided.
 
 
