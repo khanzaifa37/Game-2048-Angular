@@ -1,7 +1,6 @@
 import { Component, ViewChildren, QueryList, HostListener, Input }  from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Subscription } from 'rxjs';
-import {Observable} from 'rxjs';
+import { Subscription , Observable} from 'rxjs';
 import { DocumentSnapshot } from '@firebase/firestore-types';
 import { CellComponent }                                            from '../cell/cell.component';
 import { KEY_MAP }                                                  from '../constants/key-map';
