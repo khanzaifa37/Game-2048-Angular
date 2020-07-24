@@ -92,7 +92,7 @@ div#game-over-body {
     display: block;
   }
   #board{
-    width: 348px;
+    /* width: 348px; */
   }
 }
 
