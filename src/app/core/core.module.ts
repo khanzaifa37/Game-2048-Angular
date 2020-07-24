@@ -17,14 +17,14 @@ export class MyHammerConfig extends HammerGestureConfig {
   };
 }
 const firebaseConfig = {
-  apiKey: "AIzaSyBhoNgHu0A1XNlU7i-idXl9rCgtLKq8Ji8",
-  authDomain: "angular-2048.firebaseapp.com",
-  databaseURL: "https://angular-2048.firebaseio.com",
-  projectId: "angular-2048",
-  storageBucket: "angular-2048.appspot.com",
-  messagingSenderId: "444671412743",
-  appId: "1:444671412743:web:ef4025aa043fa2a872b8a2",
-  measurementId: "G-VC5LKVELQP"
+  apiKey: '',
+  authDomain: '',
+  databaseURL: '',
+  projectId: '',
+  storageBucket: '',
+  messagingSenderId: '',
+  appId: '',
+  measurementId: ''
 };
 
 @NgModule({
