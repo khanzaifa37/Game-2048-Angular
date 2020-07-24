@@ -1,3 +1,7 @@
+
+import {zip as observableZip, from as observableFrom,  Observable } from 'rxjs';
+
+import {switchMap, map, tap, bufferCount} from 'rxjs/operators';
 import { Injectable }                   from '@angular/core';
 
 import { Cell }                         from './cell.model';
@@ -5,15 +9,13 @@ import { Direction }                    from './enums/direction';
 import { KEY_MAP }                      from './constants/key-map';
 import { ACTION_MAP, IOperationResult } from './action-handler';
 
-import { Observable }                   from 'rxjs';
-import 'rxjs/add/observable/from';
-import 'rxjs/add/observable/zip';
-import 'rxjs/add/operator/bufferCount';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/pairwise';
-import 'rxjs/add/operator/reduce';
+
+
+
+
+
+
+
 
 const rand           = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 const sameValueCells = (cell1: Cell, cell2: Cell) => cell1.value === cell2.value;
@@ -75,13 +77,13 @@ export class GameService {
     this.cells = Array(this.gridSize*this.gridSize).fill(null).map(_ => new Cell());
     this.score = 0;
 
-    Observable.from(this.cells)
-      .bufferCount(this.gridSize)
-      .bufferCount(this.gridSize)
-      .do(rows => this.rows = rows)
-      .map(rows => rows.map(row => Observable.from(row)))
-      .switchMap(obsArray => Observable.zip(...obsArray))
-      .bufferCount(this.gridSize)
+    observableFrom(this.cells).pipe(
+      bufferCount(this.gridSize),
+      bufferCount(this.gridSize),
+      tap(rows => this.rows = rows),
+      map(rows => rows.map(row => observableFrom(row))),
+      switchMap(obsArray => observableZip(...obsArray)),
+      bufferCount(this.gridSize),)
       .subscribe(columns => this.columns = columns)
   }
 
@@ -90,8 +92,8 @@ export class GameService {
   }
 
   move(direction: Direction): Observable<any> {
-    return ACTION_MAP[direction](direction === Direction.Left || direction === Direction.Right ? this.columns : this.rows)
-      .map((result: IOperationResult) => { this.score += result.mergeScore; return result; });
+    return ACTION_MAP[direction](direction === Direction.Left || direction === Direction.Right ? this.columns : this.rows).pipe(
+      map((result: IOperationResult) => { this.score += result.mergeScore; return result; }));
   }
 
   randomize(amount: number, direction: number = -1) {

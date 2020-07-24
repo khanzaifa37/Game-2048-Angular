@@ -1,7 +1,7 @@
 #cell {
   width: 80px;
   height: 80px;
-  background-color:#29282881;
+  background-color: #595f5cbb;
   display: inline-block;
   vertical-align: middle;
   margin: 5px;
@@ -27,51 +27,51 @@ div#cell-value {
 }
 
 #cell.color-2 {
-    background: #cfc036;
+    background: #eec45b;
 }
 
 #cell.color-4 {
-    background: #d1e04bb0;
+    background: #e4ae26;
 }
 
 #cell.color-8 {
   color: #f9f6f2;
-  background: #ee954c;
+  background: #e47e2b;
 }
 
 #cell.color-16 {
   color: #f9f6f2;
-  background: #E76F51;
+  background: #a3c93c;
 }
 
 #cell.color-32 {
   color: #f9f6f2;
-  background: #ec5e3a;
+  background: #d45a3b;
 }
 
 #cell.color-64 {
   color: #f9f6f2;
-  background: #a02e15;
+  background: #d43d18;
 }
 
 #cell.color-128 {
   color: #f9f6f2;
-  background: #edcf72;
+  background: #4b8297;
 }
 
 #cell.color-256 {
   color: #f9f6f2;
-  background: #4c6f7c;
+  background: #264653;
 }
 
 #cell.color-512 {
   color: #f9f6f2;
-  background: #264653;
+  background: #2a499d;
 }
 
 #cell.color-1024 {
   color: #f9f6f2;
-  background: #5f9c95;
+  background: #32a6f3;
 }
 
 #cell.color-2048 {

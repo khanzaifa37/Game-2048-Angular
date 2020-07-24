@@ -1,13 +1,15 @@
+
+import {of as observableOf, from as observableFrom,  Observable } from 'rxjs';
+
+import {map, pairwise, mergeMap, delay} from 'rxjs/operators';
 import { Direction }  from './enums/direction';
 import { Cell }       from './cell.model';
 
-import { Observable } from 'rxjs';
-import 'rxjs/add/observable/from';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/pairwise';
+
+
+
+
+
 
 export interface IOperationResult { mergeScore: number; hasMoved: boolean; };
 
@@ -30,21 +32,19 @@ function operation(entry1: Cell[], entry2: Cell[]): IOperationResult {
 }
 
 function merge(operands: Cell[][][]): Observable<any> {
-  return Observable.from(operands)
-    .mergeMap(rows => {
+  return observableFrom(operands).pipe(
+    mergeMap(rows => {
       // console.log(rows);
       let delayTime = 0;
-      return Observable
-              .from(rows)
-              .pairwise()
-              .mergeMap(pair => {
+      return observableFrom(rows).pipe(
+              pairwise(),
+              mergeMap(pair => {
                 delayTime += 10;
-                return Observable
-                        .of(pair)
-                        .delay(delayTime);
-              });
-    })
-    .map(([op1, op2]) => operation(op2, op1));
+                return observableOf(pair).pipe(
+                        delay(delayTime));
+              }),);
+    }),
+    map(([op1, op2]) => operation(op2, op1)),);
 }
 
 function resetMerge(entites: Cell[][]) {

@@ -7,7 +7,7 @@
   /*width: 348px;*/
   position: relative;
   padding: 5px;
-  background: #525252;
+  background: #272928;
   border-radius: 5px;
   margin: 0 50px;
   cursor:grabbing;
@@ -92,7 +92,7 @@ div#game-over-body {
     display: block;
   }
   #board{
-    width: 348px;
+    /* width: 348px; */
   }
 }
 
